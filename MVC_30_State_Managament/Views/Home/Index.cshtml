@@ -1,0 +1,22 @@
+﻿@model List<MVC_30_State_Managament.Models.Kategori>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="/Home/QueryStringAl?ad=Negan&yas=52&soyad=Lucille">Diğer Sayfayı Aç</a>
+
+<table class="table table-bordered">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.KatAdi</td>
+            <td>@item.Aciklama</td>
+            <td>
+                <a href="/Home/KategoriDetay/kategoriID=@item.ID">Detayına Git</a>
+            </td>
+        </tr>
+    }
+</table>
